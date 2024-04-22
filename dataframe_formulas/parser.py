@@ -374,15 +374,6 @@ class Parser(object):
 
 def get_func_list():
     funcs = list(get_functions().keys())
-    funcs.remove("ARRAY")
-    funcs.remove("ARRAYROW")
-    funcs.remove("CEILING.MATH")
-    funcs.remove("TRUE")
-    funcs.remove("FALSE")
-    funcs.remove("NULL")
-    funcs.remove("DEGREES")
-    funcs.remove("EVEN")
-    funcs.remove("PROPER")
     return sorted(funcs)
 
 
