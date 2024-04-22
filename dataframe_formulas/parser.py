@@ -222,7 +222,6 @@ class Parser(object):
         ndf = vaex.from_dict({new_column: sr.tolist()})
         if _dtype == "object":
             _type = "str"
-            binning_type = "scatter"
             if new_column in self.df.get_column_names():
                 self.df[new_column] = ndf[new_column].values
                 self.df[new_column] = self.df[new_column].astype("string")
@@ -230,7 +229,6 @@ class Parser(object):
                 self.df.add_column(new_column, ndf[new_column].values, dtype="string")
         elif _dtype == "float64":
             _type = "float"
-            binning_type = "continuous"
             if new_column in self.df.get_column_names():
                 self.df[new_column] = ndf[new_column].values
                 self.df[new_column] = self.df[new_column].astype("float64")
@@ -238,7 +236,6 @@ class Parser(object):
                 self.df.add_column(new_column, ndf[new_column].values, dtype="float64")
         elif _dtype == "int64":
             _type = "int"
-            binning_type = "continuous"
             if new_column in self.df.get_column_names():
                 self.df[new_column] = ndf[new_column].values
                 self.df[new_column] = self.df[new_column].astype("int64")
@@ -246,7 +243,6 @@ class Parser(object):
                 self.df.add_column(new_column, ndf[new_column].values, dtype="int64")
         else:
             _type = "str"
-            binning_type = "scatter"
             if new_column in self.df.get_column_names():
                 self.df[new_column] = ndf[new_column].values
                 self.df[new_column] = self.df[new_column].astype("string")
