@@ -44,23 +44,12 @@ class Parser(object):
         params: custom_var_map: 变量映射关系 {column_alias: {
             "var": new_column,
             # 前端展示名称
-            "alias": column_alias,
-            "role": "predict",
             # 格式化后的自定义生成公式
             "format_formula": self.format_formula,
             # 原始自定义生成公式
             "formula": self.formula,
-            # 是否为自定义
-            "is_custom": 1,
             "type": _type,
-            "extra": {},
-            "group_var": 1,
-            "delete_var": 0,
             "sample_data": self.df[new_column].head(50).unique().tolist(),
-            "binning_type": binning_type,
-            # 是否禁用
-            "disable": 0,
-            "iv": 0,
         }}
         """
         self.format_formula = None
